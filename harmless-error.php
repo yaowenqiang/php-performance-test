@@ -3,7 +3,7 @@
 $s = microtime(1);
 /* error_reporting(E_ALL); */
 for ($i = 0; $i < 100000; $i++) {
-    $foo[bar.$i]= 1;
+    $a="$foo$i"?:0;
 }
 $e = microtime(1);
 echo 'constants index '.($e- $s);
@@ -15,5 +15,5 @@ for ($i = 0; $i < 100000; $i++) {
     $foo["bar".$i]= 1;
 }
 $e = microtime(1);
-echo 'string &nbsp;&nbsp;&nbsp;index '.($e- $s);
+echo 'string  index '.($e- $s);
 ?>
